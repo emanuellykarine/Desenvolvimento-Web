@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Questão 2</title>
+</head>
+<body style="margin:1em">
+    <header>
+        <h1 class="title">Simulador de Empréstimo Pessoal</h1>
+    </header>
+    <main>
+        <form action="resultado2/">
+            <div>
+                <label class="label"> Valor do empréstimo: </label>
+                <input type="number" name="valor_emprestimo">
+            </div>
+
+            <div>
+                <label class="label">Taxa de juros ao mês (%): </label>
+                <input type="number" name="taxa">
+            </div>
+
+            <div>
+                <label class="label">Número de parcelas: </label>
+                <input type="number" name="n_parcelas">
+            </div>
+            
+            <button type="submit" class="button is-success" style="margin-top:1em">Calcular</button>
+        </form>
+    </main>
+</body>
+</html>

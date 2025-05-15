@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Enquete</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="title" style="margin-top:1em;margin-left: 1em;">Qual é o seu gênero favorito?</h1>
+    </header>
+    <main>
+        <section class="section">
+            <form action="{% url 'enquete:resultados_genero' %}" method="POST">
+                {% csrf_token %}
+                <div>
+                    <input type="radio" value="Ação" name="genero">
+                    <label>Ação</label>
+                </div>
+                <div>
+                    <input type="radio" value="Comédia" name="genero">
+                    <label>Comédia</label>
+                </div>
+                <div>
+                    <input type="radio" value="Drama" name="genero">
+                    <label>Drama</label>
+                </div>
+                <div>
+                    <input type="radio" value="Terror" name="genero">
+                    <label>Terror</label>
+                </div>
+                <button type="submit" class="button is-dark">Enviar resposta</button>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
