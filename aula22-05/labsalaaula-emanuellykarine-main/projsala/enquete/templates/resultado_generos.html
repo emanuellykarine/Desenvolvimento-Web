@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'enquete/css/style.css' %}">
+    <title>Resultado</title>
+    
+</head>
+
+<body>
+    <header>
+        <h1 class="title" style="margin-top:1em;margin-left: 1em;">Resultados</h1>
+    </header>
+    <main>
+        <section class="section">
+            <table class="table is-fullwidth is-hoverable">
+                <tr>
+                    <th>Opção</th>
+                    <th>Votos</th>
+                </tr>
+                <tr>
+                    <td>Ação</td>
+                    <td>{{ acao }}</td>
+                </tr>
+                <tr>
+                    <td>Comédia</td>
+                    <td>{{ comedia }}</td>
+                </tr>
+                <tr>
+                    <td>Drama</td>
+                    <td>{{ drama }}</td>
+                </tr>
+                <tr>
+                    <td>Terror</td>
+                    <td>{{ terror }}</td>
+                </tr>
+
+            </table>
+        </section>
+    </main>
+</body>
+
+</html>

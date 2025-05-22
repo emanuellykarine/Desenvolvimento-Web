@@ -1,0 +1,7 @@
+.table {
+    --bulma-table-row-hover-background-color: var(--bulma-primary-bold)
+}
+
+body {
+    background: url('../imgs/Fundo.jpg') repeat center;
+}
