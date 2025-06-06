@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 2</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    {% load static %}
+    <script>
+        const previsaoUrl = "{% url 'Questao2:previsao' %}";
+    </script>
+    <script src="{% static 'Questao2/js/cidades.js' %}"></script>
+</head>
+<body id="body" class="section">
+    <h1 class="title">Previsão do tempo</h1>
+    <h2 class="is-size-5">Cidades cadastradas</h2>
+    <ul class="box has-background-light">
+        {% for cidade in cidades%}
+            <li>{{cidade.nome}}</li>
+        {% endfor %}
+    </ul>
+    <div class="box has-background-light">
+        <h3 class="is-size-5 mb-2">Digite o nome da cidade </h3>
+        <form onsubmit="cidade_encontrada(event)">
+            {% csrf_token %}
+            <input class="input mb-2" type="text" placeholder="Nome da cidade" name="cidade">
+            <button class="button is-primary" type="submit">Enviar</button>
+        </form>
+    </div>
+    
+</body>
+</html>

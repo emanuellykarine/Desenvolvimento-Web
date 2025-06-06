@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questao 1</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    {% load static %}
+    <script>
+        const comentarUrl = "{% url 'Questao1:comentarios' %}";
+    </script>
+    <script src="{% static 'Questao1/js/comentario.js' %}"></script>
+</head>
+<body class="section">
+    <h1 class="title">Postagens</h1>
+
+    {%for postagem in postagens%}
+    <div class="box mb-5 has-background-light">
+        <h2 class="has-text-primary is-size-3"> {{ postagem.titulo }} </h2>
+        <p class="is-size-5 mb-5">{{ postagem.conteudo }}</p>
+    
+        <h3 class="is-size-5 mb-3">Comentários</h3>
+        <ul id="comentarios-{{forloop.counter0}}">
+            {% for comentario in postagem.comentarios %}
+                <li class="mb-4"><strong>{{comentario.autor}}:</strong> {{comentario.conteudo}}</li>
+            {% endfor %}
+        </ul>
+
+        <form class="columns" onsubmit="comentar(event, {{ forloop.counter0 }})">
+            {% csrf_token %}
+            <input class="column input m-2" type="text" name="autor" placeholder="Seu nome">
+            <input class="column input m-2" type="text" name="conteudo" placeholder="Comentário">
+            <button class="button is-primary m-2" type="submit">Enviar</button>
+        </form>
+    </div>
+    {% endfor %}
+</body>
+</html>

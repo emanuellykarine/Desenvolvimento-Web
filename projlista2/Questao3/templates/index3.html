@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 3</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    {% load static %}
+    <script>
+        const freteUrl = "{% url 'Questao3:frete' %}";
+    </script>
+    <script src="{% static 'Questao3/js/frete.js' %}"></script>
+</head>
+<body id="body" class="section">
+    <h1 class="title">Calculadora de frete</h1>
+    <form onsubmit="frete_function(event)">
+        <div class="select is-primary">
+            <select name="origem" id="origem">
+                {% for capital in capitais %}
+                    <option value="{{capital.nome}}">{{capital.nome}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <div class="select is-primary">
+            <select name="destino" id="destino">
+                {% for capital in capitais %}
+                    <option value="{{capital.nome}}">{{capital.nome}}</option>
+                {% endfor %}    
+            </select>
+        </div>
+        
+
+        <button class="button is-primary" type="submit">Enviar</button>
+    </form>
+    
+    <div id="resultado" class="mt-5"></div>
+</body>
+</html>

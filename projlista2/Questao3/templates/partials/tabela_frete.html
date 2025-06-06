@@ -1,0 +1,16 @@
+<table class="table is-bordered is-striped is-narrow is-hoverable">
+    <thead>
+        <tr>
+            <th class="is-success">Origem</th>
+            <th class="is-success">Destino</th>
+            <th class="is-success">Frete Estimado</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ origem }}</td>
+            <td>{{ destino }}</td>
+            <td>R$ {{ frete|floatformat:2 }}</td>
+        </tr>
+    </tbody>
+</table>
